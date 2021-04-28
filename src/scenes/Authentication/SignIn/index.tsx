@@ -20,6 +20,7 @@ import {
 } from 'react-native'
 import { ScaledSheet } from 'rn-scaled-sheet'
 import { ISignIn } from 'services'
+import { textToSpeech } from 'services/SpeechService'
 import { authAsyncActions } from 'stores/authReducer'
 import { useAppDispatch } from 'stores/hook'
 import { Theme, useTheme } from 'theme'
@@ -116,7 +117,8 @@ function _SignIn() {
         <Text>{languages.DontHaveAccount}</Text>
         <TouchableOpacity
           onPress={() => {
-            navigate(NAV_SCREENS.SignUp)
+            // navigate(NAV_SCREENS.SignUp)
+            textToSpeech('Mới đây, vào chiều ngày, 28/4, Sở GD-ĐT TP.HCM đã có văn bản gửi các cơ sở giáo dục trên địa bàn về việc tăng cường công tác phòng chống dịch Covid-19. Sở yêu cầu các cơ sở giáo dục tiếp tục tăng cường cảnh giác với nguy cơ dịch bệnh, đề cao trách nhiệm người đứng đầu, thực hiện quyết liệt, đồng bộ, hiệu quả các biện pháp phòng, chống dịch Covid-19 đã đề ra. Các trường tiếp tục thực hiện nghiêm theo công văn 536 ban hành ngày 25 / 2 / 2021 của Sở GD - ĐT về tăng cường các biện pháp phòng dịch khi học sinh, sinh viên đi học trở lại.Tổ chức nghiêm yêu cầu 5K của Bộ Y tế tại đơn vị.Đặc biệt, cán bộ, giáo viên, nhân viên và học sinh tuân thủ đeo khẩu trang ngoài lớp học.')
           }}>
           <Text style={styles.textSignUp} text={languages.SignUp} />
         </TouchableOpacity>
